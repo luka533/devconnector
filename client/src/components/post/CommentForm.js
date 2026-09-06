@@ -27,7 +27,12 @@ function CommentForm({ postId }) {
           placeholder="Comment on this post"
           required
         ></textarea>
-        <input type="submit" class="btn btn-dark my-1" value="Submit" />
+        <input
+          type="submit"
+          class="btn btn-dark my-1"
+          value="Submit"
+          disabled={isLoading}
+        />
       </form>
     </div>
   );

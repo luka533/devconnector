@@ -6,7 +6,7 @@ function ProfileItem({ profile: { user, status, company, location, skills } }) {
 
   return (
     <div className="profile bg-light">
-      <img src={avatar} alt={`Image of ${name}`} className="round-img" />
+      <img src={avatar} alt={`${name}`} className="round-img" />
       <div>
         <h2>{name}</h2>
         <p>

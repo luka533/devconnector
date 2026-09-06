@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate, Link, Navigate } from "react-router-dom";
+import { useLocation, Link, Navigate } from "react-router-dom";
 import { authLoginAsync } from "../../state/auth/authSlice";
 
 function Login() {
@@ -10,7 +10,6 @@ function Login() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
-  const navigate = useNavigate();
   const location = useLocation();
 
   // after successful login (in effect or after dispatch resolves):

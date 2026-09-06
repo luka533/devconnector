@@ -28,7 +28,7 @@ function Dashboard() {
   const [deleteProfileMutation, { isLoading: isDeletingProfile }] =
     useDeleteProfileMutation();
 
-  if (!isAuthenticated || isLoading) {
+  if (!isAuthenticated || isLoading || isDeletingProfile) {
     return <Spinner />;
   }
 

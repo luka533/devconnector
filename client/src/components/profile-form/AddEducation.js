@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAddEducationMutation } from "../../state/profiles/profileApiSlice";
-import { removeAlert, setAlert } from "../../state/alert/alertSlice";
-import { useDispatch } from "react-redux";
 
 function AddEducation() {
   const [formData, setformData] = useState({
@@ -24,7 +22,6 @@ function AddEducation() {
   const onChange = (e) =>
     setformData({ ...formData, [e.target.name]: e.target.value });
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [addEducationMutation, { isLoading: isAddingEducation }] =

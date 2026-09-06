@@ -1,11 +1,8 @@
 import { useState } from "react";
-import {
-  useCreateProfileMutation,
-  useGetCurrentProfileQuery,
-} from "../../state/profiles/profileApiSlice";
+import { useCreateProfileMutation } from "../../state/profiles/profileApiSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { removeAlert, setAlert } from "../../state/alert/alertSlice";
+import { setAlert } from "../../state/alert/alertSlice";
 import { showAlert } from "../../util/showAlert";
 
 function CreateProfile() {
@@ -44,11 +41,7 @@ function CreateProfile() {
   const [createProfileMutation, { isLoading: isCreatingProfile }] =
     useCreateProfileMutation();
 
-  const { isAuthenticated, isLoading } = useSelector((state) => state.auth);
-
-  const { data } = useGetCurrentProfileQuery(undefined, {
-    skip: !isAuthenticated || isLoading,
-  });
+  const { isLoading } = useSelector((state) => state.auth);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();

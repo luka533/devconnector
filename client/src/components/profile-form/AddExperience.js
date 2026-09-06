@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAddExperienceMutation } from "../../state/profiles/profileApiSlice";
-import { removeAlert, setAlert } from "../../state/alert/alertSlice";
-import { useDispatch } from "react-redux";
 
 function AddExperience() {
   const [formData, setformData] = useState({
@@ -23,7 +21,6 @@ function AddExperience() {
   const onChange = (e) =>
     setformData({ ...formData, [e.target.name]: e.target.value });
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [addExperienceMutation, { isLoading: isAddingExperience }] =
@@ -32,9 +29,6 @@ function AddExperience() {
   const onSubmit = (e) => {
     e.preventDefault();
     addExperienceMutation(formData);
-    // const id = crypto.randomUUID();
-    // dispatch(setAlert({ msg: "Experience Created!", type: "success" }));
-    // setTimeout(() => dispatch(removeAlert(id)), 5000);
 
     navigate("/dashboard");
   };
