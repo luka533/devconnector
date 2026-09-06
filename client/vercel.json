@@ -2,10 +2,10 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://devconnector-api.vercel.app/api/:path*"
+      "destination": "https://devconnector-lcxt.onrender.com/api/:path*"
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ]
